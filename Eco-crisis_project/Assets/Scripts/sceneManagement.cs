@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 public class sceneManagement : MonoBehaviour
 {
 
+    public int lvl;
+  
     public void ShowStagePoints()
     {
         SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
     }
 
+  
     public void StartBoss()
     {
         SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
@@ -28,5 +31,24 @@ public class sceneManagement : MonoBehaviour
     public void StartLevel()
     {
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
+    }
+  public void ContinueLevel()
+    {
+
+        if (lvl == 4)
+        {
+            SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
+        }
+       
+
+       
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
