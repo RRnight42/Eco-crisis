@@ -101,7 +101,11 @@ MonoBehaviour:
   m_MinSize: {x: 710, y: 271}
   m_MaxSize: {x: 18005, y: 10021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 148
+=======
+  controlID: 100
+>>>>>>> scripting
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,7 +156,11 @@ MonoBehaviour:
   m_MinSize: {x: 710, y: 392}
   m_MaxSize: {x: 18005, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 147
+=======
+  controlID: 99
+>>>>>>> scripting
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -230,7 +238,11 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 146
+=======
+  controlID: 98
+>>>>>>> scripting
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,7 +288,11 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 270
+=======
+  controlID: 166
+>>>>>>> scripting
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -408,9 +424,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 883d0000
       m_LastClickedID: 0
       m_ExpandedIDs: 20b3ffff44b3ffff62b3ffff80b3ffff38b4fffffcb4ffff6cb5ffffb8b5ffff8ab6ffffd2c1ffff30c4ffffc2daffff50e1ffff82f7ffffb0f8ffff1efbffffea440000
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 50fbffff
+>>>>>>> scripting
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -509,22 +531,28 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\rober\OneDrive\Escritorio\Git_Unity\Eco-crisis_project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 303d0000
     m_LastClickedID: 15664
     m_ExpandedIDs: 00000000203d0000
+=======
+    m_SelectedIDs: 963d0000
+    m_LastClickedID: 15766
+    m_ExpandedIDs: 000000008a3d00008c3d0000
+>>>>>>> scripting
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -786,9 +814,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 331.4004
     speed: 2
     m_Value: 347.0161
+=======
+    m_Target: 119.50082
+    speed: 2
+    m_Value: 114.35485
+>>>>>>> scripting
   m_Ortho:
     m_Target: 1
     speed: 2
