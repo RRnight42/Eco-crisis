@@ -15,7 +15,7 @@ public class dataManager : MonoBehaviour
 
        if(PlayerPrefs.HasKey("CurrentLevel"))
         {
-            continue_levelint.text = "Continue   " + PlayerPrefs.GetInt("CurrentLevel");
+            continue_levelint.text = "Continue   " + "Level ( " + PlayerPrefs.GetInt("CurrentLevel") + " )";
             continueLvl.gameObject.SetActive(true);
         }
     }
