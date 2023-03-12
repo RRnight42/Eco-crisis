@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     public int lifePoints;
 
-    public void Attack()
+    virtual public void Attack()
     {
 
     }
