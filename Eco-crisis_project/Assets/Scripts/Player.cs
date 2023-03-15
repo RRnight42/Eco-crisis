@@ -19,7 +19,20 @@ public class Player :Character
   
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if(ammo < 30)
+            {
+             StartCoroutine(Recharge());
+            } else
+            {
+                //text enseñando municion al maximo
+            }
+            
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
            // Debug.DrawRay()
             pointing = true; 
@@ -28,7 +41,7 @@ public class Player :Character
             pointing = false;
         }
 
-        if (Input.GetKey(KeyCode.Mouse1) && pointing)
+        if (Input.GetKey(KeyCode.Mouse0) && pointing)
         {
             firerate += Time.deltaTime;
             while (ammo > 30)
@@ -248,5 +261,13 @@ public class Player :Character
                 }
             }
         }
+    }
+
+    IEnumerator Recharge()
+    {
+        //animator.setbool()
+
+        yield return new WaitForSeconds(4);       
+        ammo = 30;
     }
 }

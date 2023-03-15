@@ -13,7 +13,7 @@ public class FPSController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
-    public bool canMove; //esto es lo que he puesto yo Miguel
+    public bool canMove; 
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
