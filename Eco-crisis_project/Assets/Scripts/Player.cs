@@ -1,26 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : Character
 {
+    public TMP_Text ammoText;
+    public TMP_Text lifeText;
+    public TMP_Text fullAmmoToast;
+
+    public Image lifeImage;
+    public Image pointingTarget;
+
+
     public GameObject firingPoint;
+
+    public bool pointing;
+
     public int ammo;
     public int shieldPoints;
-    public bool pointing;
-    public float firerate;
+    public int maxLifePoints;
+
+
+    public float firingTime;
+    public float fireRate;
 
     void Start()
     {
+        fullAmmoToast.gameObject.SetActive(false);
+
+        fireRate = 0.25f;
         shieldPoints = 0;
-        pointing = false;
         lifePoints = 100;
+        maxLifePoints = 100;
         ammo = 30;
+
+        pointing = false;
+
+       
     }
 
 
     void Update()
     {
+        float life = (float)lifePoints / maxLifePoints;
+        lifeImage.fillAmount = life;
+
+        //recharge
         if (Input.GetKeyDown(KeyCode.R))
         {
             if (ammo < 30)
@@ -29,15 +56,16 @@ public class Player : Character
             }
             else
             {
-                //text enseñando municion al maximo
+                StartCoroutine(ShowFullAmmo());
             }
 
         }
 
-
+       //pointing
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             // Debug.DrawRay()
+
             pointing = true;
         }
         else
@@ -47,16 +75,30 @@ public class Player : Character
 
         if (Input.GetKey(KeyCode.Mouse0) && pointing)
         {
-            firerate += Time.deltaTime;
+            firingTime += Time.deltaTime;
             while (ammo > 30)
             {
-                if (firerate > 0.25f)
+                if (firingTime > fireRate)
                 {
                     Attack();
                     ammo = ammo - 1;
+                    ammoText.text = "" + ammo;
                 }
 
             }
+        }
+
+        if(lifePoints > 75)
+        {
+            fireRate = 0.25f;
+        }
+        if(lifePoints < 50 && lifePoints > 25)
+        {
+            fireRate = 0.5f;
+        }
+        if(lifePoints < 25)
+        {
+            fireRate = 1f;
         }
     }
 
@@ -280,6 +322,15 @@ public class Player : Character
             yield return new WaitForSeconds(4);
             ammo = 30;
         }
+
+    IEnumerator ShowFullAmmo()
+    {
+        fullAmmoToast.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        fullAmmoToast.gameObject.SetActive(false);
+    }
+
+
     }
 
 
