@@ -11,34 +11,48 @@ public class Player : Character
     public TMP_Text fullAmmoToast;
 
     public Image lifeImage;
+    public Image purityImage;
+
     public Image pointingTarget;
 
 
     public GameObject firingPoint;
 
+   
+    public GameObject hittingParticle;
+    public GameObject firing;
+
+    ParticleSystem firingParticle;
+
+    public Animator target;
+    public Animator shield;
+    public Animator playerAnimator;
+
     public bool pointing;
+    public bool shieldActivated;
 
-    public int ammo;
-    public int shieldPoints;
-    public int maxLifePoints;
+     int ammo;
+    
+     int maxLifePoints;
+     int maxPurityPoints;
+     int shieldTime;
+     int shieldSeconds;
+    int purityPoints;
 
-
-    public float firingTime;
-    public float fireRate;
+    float firingTime;
+    float fireRate;
 
     void Start()
     {
+        firingParticle = firing.GetComponent<ParticleSystem>();
         fullAmmoToast.gameObject.SetActive(false);
-
-        fireRate = 0.25f;
-        shieldPoints = 0;
+        shieldActivated = false;
+        fireRate = 0.25f;     
         lifePoints = 100;
+        purityPoints = 100;
         maxLifePoints = 100;
         ammo = 30;
-
-        pointing = false;
-
-       
+        pointing = false;    
     }
 
 
@@ -47,11 +61,16 @@ public class Player : Character
         float life = (float)lifePoints / maxLifePoints;
         lifeImage.fillAmount = life;
 
+        float purity = (float)purityPoints / maxPurityPoints;
+        purityImage.fillAmount = purity;
+
+
         //recharge
         if (Input.GetKeyDown(KeyCode.R))
         {
             if (ammo < 30)
             {
+                // playerAnimator.setTrigger("recharge");
                 StartCoroutine(Recharge());
             }
             else
@@ -73,8 +92,10 @@ public class Player : Character
             pointing = false;
         }
 
-        if (Input.GetKey(KeyCode.Mouse0) && pointing)
+        if (Input.GetKey(KeyCode.Mouse0) && pointing && ammo > 0)
         {
+            firingParticle.Play();
+
             firingTime += Time.deltaTime;
             while (ammo > 30)
             {
@@ -86,6 +107,11 @@ public class Player : Character
                 }
 
             }
+        }
+        else
+        {
+            firingTime = 0;
+            firingParticle.Stop();
         }
 
         if(lifePoints > 75)
@@ -110,7 +136,12 @@ public class Player : Character
 
         if (Physics.Raycast(firingPoint.transform.position, firingPoint.transform.forward, out hit , 100))
         {
-
+            if (hit.transform.tag == "scene")
+            {               
+                GameObject hittingParticleEffect = Instantiate(hittingParticle, hit.transform.position, hittingParticle.transform.rotation);
+                hittingParticleEffect.GetComponent<ParticleSystem>().Play();
+                Destroy(hittingParticleEffect, 2);
+            }
             if (hit.transform.tag == "enemy")
             {
                 Vector3 distance = firingPoint.transform.position - hit.transform.position;
@@ -314,12 +345,10 @@ public class Player : Character
             }
         }
     }
-
+     
         IEnumerator Recharge()
-        {
-            //animator.setbool()
-
-            yield return new WaitForSeconds(4);
+        {       
+        yield return new WaitForSeconds(4);
             ammo = 30;
         }
 
@@ -328,6 +357,19 @@ public class Player : Character
         fullAmmoToast.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
         fullAmmoToast.gameObject.SetActive(false);
+    }
+
+    IEnumerator ShieldActive()
+    {
+        shieldActivated = true;
+        shield.SetBool("shield", true);
+        while(shieldSeconds < shieldTime)
+        {
+            yield return new WaitForSeconds(1);
+            shieldSeconds = shieldSeconds + 1;
+        }
+
+        shield.SetBool("shield", false);
     }
 
 
