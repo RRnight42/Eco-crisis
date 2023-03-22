@@ -39,7 +39,8 @@ public class dataManager : MonoBehaviour
             {
              PlayerPrefs.DeleteAll();
             Application.Quit();
-            }          
+            }
+            yield return null;
        } 
             
      }
