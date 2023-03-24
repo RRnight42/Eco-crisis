@@ -6,37 +6,37 @@ using TMPro;
 
 public class Player : Character
 {
-    public TMP_Text ammoText;
-    public TMP_Text lifeText;
-    public TMP_Text fullAmmoToast;
-
-    public Image lifeImage;
-    public Image purityImage;
-
-    public Image pointingTarget;
-
-
-    public GameObject firingPoint;
-
    
-    public GameObject hittingParticle;
-    public GameObject firing;
-
-    ParticleSystem firingParticle;
-
-    public Animator target;
-    public Animator shield;
-    public Animator playerAnimator;
-
-    public bool pointing;
-    public bool shieldActivated;
-
-     int ammo;
     
-     int maxLifePoints;
-     int maxPurityPoints;
-     int shieldTime;
-     int shieldSeconds;
+
+    Image lifeImage;
+    Image purityImage;
+
+    public GameObject fullAmmoToast;
+    public GameObject emptyAmmoToast;
+    GameObject ShieldBarImage;
+    GameObject pointingTarget;
+    GameObject firingPoint; 
+    
+    GameObject firing;
+    GameObject shield;
+    public GameObject hittingParticle;
+
+    ParticleSystem shieldParticle;
+     ParticleSystem firingParticle;
+
+    Animator targetAnimator;
+    Animator shieldAnimator;
+    Animator playerAnimator;
+
+    bool pointing;
+    bool shieldActivated;
+
+    int ammo;   
+    int maxLifePoints;
+    int maxPurityPoints;
+    int shieldTime;
+    int shieldSeconds;
     int purityPoints;
 
     float firingTime;
@@ -44,11 +44,33 @@ public class Player : Character
 
     void Start()
     {
+        lifeImage = GameObject.Find("LifeBar").GetComponent<Image>();
+        purityImage = GameObject.Find("PurityBar").GetComponent<Image>();
+
+        pointingTarget = GameObject.Find("Target");
+        targetAnimator = pointingTarget.GetComponent<Animator>();
+
+        ShieldBarImage = GameObject.Find("ShieldBar");
+        shieldAnimator = ShieldBarImage.GetComponent<Animator>();
+
+        playerAnimator = this.GetComponent<Animator>();
+
+        firingPoint = GameObject.Find("FiringPoint");
+
+        firing = GameObject.Find("firing");
         firingParticle = firing.GetComponent<ParticleSystem>();
+
+        shield = GameObject.Find("shield");
+        shieldParticle = shield.GetComponent<ParticleSystem>();
+
+        
         fullAmmoToast.gameObject.SetActive(false);
+        emptyAmmoToast.gameObject.SetActive(false);
+
         shieldActivated = false;
         fireRate = 0.25f;     
         lifePoints = 100;
+        shieldTime = 10;
         purityPoints = 100;
         maxLifePoints = 100;
         ammo = 30;
@@ -65,12 +87,22 @@ public class Player : Character
         purityImage.fillAmount = purity;
 
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+           firingParticle.Play();
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            firingParticle.Stop();
+        }
+
         //recharge
         if (Input.GetKeyDown(KeyCode.R))
         {
             if (ammo < 30)
             {
-                // playerAnimator.setTrigger("recharge");
+                
                 StartCoroutine(Recharge());
             }
             else
@@ -84,34 +116,45 @@ public class Player : Character
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             // Debug.DrawRay()
-
+            targetAnimator.SetBool("pointing" , true);
             pointing = true;
         }
         else
         {
+            targetAnimator.SetBool("pointing", false);
             pointing = false;
         }
 
-        if (Input.GetKey(KeyCode.Mouse0) && pointing && ammo > 0)
-        {
+        //shooting
+        if (Input.GetKey(KeyCode.Mouse0) && pointing)
+        { 
+          if(ammo == 0)
+          {
+              StartCoroutine(ShowEmptyAmmo());
+          } else { 
+            
+            // playerAnimator.setBool("shooting" , true);
             firingParticle.Play();
-
             firingTime += Time.deltaTime;
-            while (ammo > 30)
+
+            while (ammo > 0)
             {
                 if (firingTime > fireRate)
                 {
                     Attack();
                     ammo = ammo - 1;
-                    ammoText.text = "" + ammo;
+                    
                 }
-
+            }                       
             }
+
         }
         else
         {
+            // playerAnimator.setTrigger("shooting" , false);
             firingTime = 0;
             firingParticle.Stop();
+            
         }
 
         if(lifePoints > 75)
@@ -346,33 +389,82 @@ public class Player : Character
         }
     }
      
-        IEnumerator Recharge()
-        {       
+    IEnumerator Recharge()
+    {   
+        // playerAnimator.setTrigger("recharge");   
         yield return new WaitForSeconds(4);
-            ammo = 30;
-        }
+        ammo = 30;
+
+    }
 
     IEnumerator ShowFullAmmo()
     {
         fullAmmoToast.gameObject.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.5f);
         fullAmmoToast.gameObject.SetActive(false);
+    }
+    IEnumerator ShowEmptyAmmo()
+    {
+        emptyAmmoToast.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        emptyAmmoToast.gameObject.SetActive(false);
     }
 
     IEnumerator ShieldActive()
     {
+        shieldSeconds = 0;
         shieldActivated = true;
-        shield.SetBool("shield", true);
+        shieldAnimator.SetBool("shield", true);
+        shieldParticle.Play();
+
         while(shieldSeconds < shieldTime)
         {
             yield return new WaitForSeconds(1);
             shieldSeconds = shieldSeconds + 1;
         }
 
-        shield.SetBool("shield", false);
+        yield return null;
+        shieldActivated = false;
+        shieldParticle.Stop();
+        shieldAnimator.SetBool("shield", false);
     }
 
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Shield")
+        {
+            StartCoroutine(ShieldActive());
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag == "Healing")
+        {
+            if(lifePoints >= 100)
+            {
+
+            }
+            else
+            {
+                lifePoints = lifePoints + 10;
+                Destroy(other.gameObject);
+                if(lifePoints >= 100)
+                {
+                    lifePoints = 100;
+                }
+            }
+        }
+        if(other.gameObject.tag == "Enemy")
+        {
+            if (shieldActivated)
+            {
+
+            }
+            else
+            {
+                lifePoints = lifePoints - 10;
+            }
+        }
     }
+}
 
 
