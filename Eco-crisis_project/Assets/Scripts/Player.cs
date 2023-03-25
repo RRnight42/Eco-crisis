@@ -18,21 +18,21 @@ public class Player : Character
     GameObject pointingTarget;
     GameObject firingPoint; 
     
-    GameObject firing;
+    
     GameObject shield;
     public GameObject hittingParticle;
 
     ParticleSystem shieldParticle;
-     ParticleSystem firingParticle;
+    
 
     Animator targetAnimator;
     Animator shieldAnimator;
     Animator playerAnimator;
 
-    bool pointing;
+   public bool pointing;
     bool shieldActivated;
 
-    int ammo;   
+   public int ammo;   
     int maxLifePoints;
     int maxPurityPoints;
     int shieldTime;
@@ -56,9 +56,6 @@ public class Player : Character
         playerAnimator = this.GetComponent<Animator>();
 
         firingPoint = GameObject.Find("FiringPoint");
-
-        firing = GameObject.Find("firing");
-        firingParticle = firing.GetComponent<ParticleSystem>();
 
         shield = GameObject.Find("shield");
         shieldParticle = shield.GetComponent<ParticleSystem>();
@@ -86,17 +83,7 @@ public class Player : Character
         float purity = (float)purityPoints / maxPurityPoints;
         purityImage.fillAmount = purity;
 
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-           firingParticle.Play();
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            firingParticle.Stop();
-        }
-
+    
         //recharge
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -113,14 +100,16 @@ public class Player : Character
         }
 
        //pointing
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse1))
         {
-            // Debug.DrawRay()
+            Debug.DrawRay(firingPoint.transform.position, firingPoint.transform.right * 100, Color.red);
+            playerAnimator.SetBool("pointing", true);
             targetAnimator.SetBool("pointing" , true);
             pointing = true;
         }
         else
         {
+            playerAnimator.SetBool("pointing", false);
             targetAnimator.SetBool("pointing", false);
             pointing = false;
         }
@@ -130,20 +119,21 @@ public class Player : Character
         { 
           if(ammo == 0)
           {
+                playerAnimator.SetBool("firing", false);
               StartCoroutine(ShowEmptyAmmo());
           } else { 
             
-            // playerAnimator.setBool("shooting" , true);
-            firingParticle.Play();
+            playerAnimator.SetBool("firing" , true);
+            
             firingTime += Time.deltaTime;
 
-            while (ammo > 0)
+            if (ammo > 0)
             {
                 if (firingTime > fireRate)
                 {
                     Attack();
                     ammo = ammo - 1;
-                    
+                    firingTime = 0;
                 }
             }                       
             }
@@ -151,24 +141,13 @@ public class Player : Character
         }
         else
         {
-            // playerAnimator.setTrigger("shooting" , false);
+            playerAnimator.SetBool("firing" , false);
             firingTime = 0;
-            firingParticle.Stop();
+            
             
         }
 
-        if(lifePoints > 75)
-        {
-            fireRate = 0.25f;
-        }
-        if(lifePoints < 50 && lifePoints > 25)
-        {
-            fireRate = 0.5f;
-        }
-        if(lifePoints < 25)
-        {
-            fireRate = 1f;
-        }
+      
     }
 
     public override void Attack()
@@ -390,11 +369,12 @@ public class Player : Character
     }
      
     IEnumerator Recharge()
-    {   
-        // playerAnimator.setTrigger("recharge");   
-        yield return new WaitForSeconds(4);
+    {
+        playerAnimator.SetBool("firing", false);
+        playerAnimator.SetBool("recharge" , true);   
+        yield return new WaitForSeconds(3);
         ammo = 30;
-
+        playerAnimator.SetBool("recharge", false);
     }
 
     IEnumerator ShowFullAmmo()
