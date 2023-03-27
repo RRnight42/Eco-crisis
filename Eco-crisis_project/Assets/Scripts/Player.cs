@@ -29,18 +29,18 @@ public class Player : Character
     Animator shieldAnimator;
     Animator playerAnimator;
 
-   public bool pointing;
-    bool shieldActivated;
+   bool pointing;
+   bool shieldActivated;
 
-   public int ammo;   
-    int maxLifePoints;
-    int maxPurityPoints;
-    int shieldTime;
-    int shieldSeconds;
-    int purityPoints;
+   int ammo;   
+   int maxLifePoints;
+   int maxPurityPoints;
+   int shieldTime;
+   int shieldSeconds;
+   int purityPoints;
 
-    float firingTime;
-    float fireRate;
+   float firingTime;
+   float fireRate;
 
     void Start()
     {

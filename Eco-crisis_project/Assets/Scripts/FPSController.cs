@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class FPSController : MonoBehaviour
 {
-    public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
+    float walkingSpeed = 7.5f;
+    float runningSpeed = 11.5f;
+    float jumpSpeed = 8.0f;
+    float gravity = 20.0f;
     public Camera playerCamera;
-    public float lookSpeed = 2.0f;
-    public float lookXLimit = 45.0f;
-    public bool canMove; 
+    float lookSpeed = 2.0f;
+    float lookXLimit = 45.0f;
+    bool canMove;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -21,6 +21,7 @@ public class FPSController : MonoBehaviour
 
     void Start()
     {
+        canMove = true;
         characterController = GetComponent<CharacterController>();
 
         // Lock cursor
