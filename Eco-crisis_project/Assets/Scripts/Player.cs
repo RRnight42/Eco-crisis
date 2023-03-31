@@ -153,16 +153,18 @@ public class Player : Character
     public override void Attack()
     {
         RaycastHit hit;
-        Physics.Raycast(firingPoint.transform.position, firingPoint.transform.right, 100);
+        
 
 
-        if (Physics.Raycast(firingPoint.transform.position, firingPoint.transform.forward, out hit , 100))
+        if (Physics.Raycast(firingPoint.transform.position, firingPoint.transform.right, out hit , 100))
         {
             if (hit.transform.tag == "scene")
             {               
                 GameObject hittingParticleEffect = Instantiate(hittingParticle, hit.transform.position, hittingParticle.transform.rotation);
                 hittingParticleEffect.GetComponent<ParticleSystem>().Play();
-                Destroy(hittingParticleEffect, 2);
+                hittingParticleEffect.transform.position = hit.point ;
+                Destroy(hittingParticleEffect, 4);
+
             }
             if (hit.transform.tag == "enemy")
             {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 8313714}
   m_Layer: 0
   m_Name: carretera (5)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 53778087}
   m_Layer: 0
   m_Name: carretera (2)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 75779510}
   m_Layer: 0
   m_Name: PARQUE
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 95602326}
   m_Layer: 0
   m_Name: fuente (1)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 152256243}
   m_Layer: 0
   m_Name: carretera (4)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 156485447}
   m_Layer: 0
   m_Name: carretera (6)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 188578586}
   m_Layer: 0
   m_Name: paredes
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 240484672}
   m_Layer: 0
   m_Name: suelo (3)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -842,7 +842,7 @@ GameObject:
   - component: {fileID: 243722723}
   m_Layer: 0
   m_Name: EDIFICIO (5)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 251116076}
   m_Layer: 0
   m_Name: EDIFICIO (4)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 301933413}
   m_Layer: 0
   m_Name: suelo (4)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 303632501}
   m_Layer: 0
   m_Name: suelo (2)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1322,7 +1322,7 @@ GameObject:
   - component: {fileID: 332719712}
   m_Layer: 0
   m_Name: EDIFICIO (8)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 349022137}
   m_Layer: 0
   m_Name: EDIFICIO (1)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1764,7 +1764,7 @@ GameObject:
   - component: {fileID: 558741168}
   m_Layer: 0
   m_Name: carretera
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1804,7 +1804,7 @@ GameObject:
   - component: {fileID: 577774518}
   m_Layer: 0
   m_Name: EDIFICIO (6)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2063,7 +2063,7 @@ GameObject:
   - component: {fileID: 694557402}
   m_Layer: 0
   m_Name: EDIFICIO (14)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2281,7 +2281,7 @@ GameObject:
   - component: {fileID: 730348374}
   m_Layer: 0
   m_Name: pilar
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2377,7 +2377,7 @@ GameObject:
   - component: {fileID: 827533388}
   m_Layer: 0
   m_Name: EDIFICIO (10)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2577,7 +2577,7 @@ GameObject:
   - component: {fileID: 899149600}
   m_Layer: 0
   m_Name: pilar (3)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2673,7 +2673,7 @@ GameObject:
   - component: {fileID: 939159787}
   m_Layer: 0
   m_Name: EDIFICIO (7)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2788,14 +2788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6345b8bb05de89e419162eb5c24810f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 7.5
-  runningSpeed: 11.5
-  jumpSpeed: 8
-  gravity: 20
   playerCamera: {fileID: 963194227}
-  lookSpeed: 2
-  lookXLimit: 45
-  canMove: 1
 --- !u!143 &942282155
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2877,8 +2870,6 @@ MonoBehaviour:
   fullAmmoToast: {fileID: 1867422829}
   emptyAmmoToast: {fileID: 597149307}
   hittingParticle: {fileID: 3329429304309393847, guid: 0c508392481e46b4ab2b84a649090514, type: 3}
-  pointing: 0
-  ammo: 0
 --- !u!95 &942282160
 Animator:
   serializedVersion: 3
@@ -2912,7 +2903,7 @@ GameObject:
   - component: {fileID: 950921395}
   m_Layer: 0
   m_Name: EDIFICIO
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7969,7 +7960,7 @@ GameObject:
   - component: {fileID: 1030214518}
   m_Layer: 0
   m_Name: EDIFICIO (13)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8219,7 +8210,7 @@ GameObject:
   - component: {fileID: 1112421242}
   m_Layer: 0
   m_Name: EDIFICIO (2)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8314,7 +8305,7 @@ GameObject:
   - component: {fileID: 1321966060}
   m_Layer: 0
   m_Name: EDIFICIO (9)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8418,13 +8409,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349828344}
-  m_LocalRotation: {x: -0.05496498, y: -0.72846097, z: 0.030248996, w: 0.6822086}
-  m_LocalPosition: {x: 0.0010009683, y: 0.07799995, z: 0.35400036}
+  m_LocalRotation: {x: -0.015383236, y: -0.6783645, z: -0.0074629467, w: 0.7345266}
+  m_LocalPosition: {x: 0.0010009687, y: 0.07799994, z: 0.3540003}
   m_LocalScale: {x: 1.497813, y: 1.4978132, z: 1.4978131}
   m_Children: []
   m_Father: {fileID: 1497390489}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -1.772, y: -93.864, z: 6.973}
+  m_LocalEulerAnglesHint: {x: -1.875, y: -85.457, z: 0.568}
 --- !u!1 &1363376793
 GameObject:
   m_ObjectHideFlags: 0
@@ -8479,7 +8470,7 @@ GameObject:
   - component: {fileID: 1379235155}
   m_Layer: 0
   m_Name: EDIFICIO (16)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8784,7 +8775,7 @@ GameObject:
   - component: {fileID: 1479416528}
   m_Layer: 0
   m_Name: carretera
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8866,7 +8857,7 @@ GameObject:
   - component: {fileID: 1485637719}
   m_Layer: 0
   m_Name: suelo (1)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9039,7 +9030,7 @@ GameObject:
   - component: {fileID: 1597182209}
   m_Layer: 0
   m_Name: fuente
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9210,7 +9201,7 @@ GameObject:
   - component: {fileID: 1610805401}
   m_Layer: 0
   m_Name: carretera (3)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9289,7 +9280,7 @@ GameObject:
   - component: {fileID: 1669528307}
   m_Layer: 0
   m_Name: edificios
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9339,7 +9330,7 @@ GameObject:
   - component: {fileID: 1670799874}
   m_Layer: 0
   m_Name: EDIFICIO (11)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9478,7 +9469,7 @@ GameObject:
   - component: {fileID: 1696611134}
   m_Layer: 0
   m_Name: suelo
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9573,7 +9564,7 @@ GameObject:
   - component: {fileID: 1716484550}
   m_Layer: 0
   m_Name: EDIFICIO (3)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9668,7 +9659,7 @@ GameObject:
   - component: {fileID: 1793669230}
   m_Layer: 0
   m_Name: pilar (2)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9763,7 +9754,7 @@ GameObject:
   - component: {fileID: 1793705319}
   m_Layer: 0
   m_Name: carretera (1)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14858,7 +14849,7 @@ GameObject:
   - component: {fileID: 1903585746}
   m_Layer: 0
   m_Name: EDIFICIO (15)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14953,7 +14944,7 @@ GameObject:
   - component: {fileID: 1972820784}
   m_Layer: 0
   m_Name: pilar (1)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15049,7 +15040,7 @@ GameObject:
   - component: {fileID: 1997435450}
   m_Layer: 0
   m_Name: EDIFICIO (12)
-  m_TagString: Untagged
+  m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

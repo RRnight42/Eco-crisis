@@ -34,7 +34,7 @@ public class dataManager : MonoBehaviour
             deleteTime = deleteTime + 1;
             }
            
-
+            
           if(deleteTime == 7)
             {
              PlayerPrefs.DeleteAll();

@@ -41,7 +41,7 @@ public class Enemy : Character
                 break;
 
             case State.rest:
-                Resting();
+                Attack();
                 Detection();
                 break;      
         }
@@ -105,7 +105,7 @@ public class Enemy : Character
 
     public override void Attack()
     {
-        playerScript.lifePoints = playerScript.lifePoints - 10;
+        
 
 
     }
