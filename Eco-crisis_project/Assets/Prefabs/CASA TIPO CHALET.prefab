@@ -91,6 +91,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9188567612235813811}
   - component: {fileID: 8651099264282007427}
+  - component: {fileID: 1404489377}
+  - component: {fileID: 1404489379}
   m_Layer: 0
   m_Name: CASA TIPO CHALET
   m_TagString: scene
@@ -105,7 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8417097016077306121}
-  m_LocalRotation: {x: -0, y: 0.7161986, z: -0, w: 0.69789654}
+  m_LocalRotation: {x: 0, y: 0.7161984, z: 0, w: 0.6978968}
   m_LocalPosition: {x: 21.403, y: 0.8, z: 90.059}
   m_LocalScale: {x: 0.024303172, y: 0.024303172, z: 0.024303172}
   m_Children:
@@ -124,5 +126,31 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1249.1127, y: 941.0367, z: 1223.4857}
-  m_Center: {x: 4262.462, y: 454.455, z: -4674.991}
+  m_Size: {x: 1249.1127, y: 941.0367, z: 992.06494}
+  m_Center: {x: 4262.462, y: 454.455, z: -4790.701}
+--- !u!65 &1404489377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8417097016077306121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1249.1127, y: 573.93353, z: 1223.4851}
+  m_Center: {x: 4262.462, y: 638.0061, z: -4674.991}
+--- !u!65 &1404489379
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8417097016077306121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 581.3212, y: 941.0367, z: 1223.4845}
+  m_Center: {x: 3928.5618, y: 454.455, z: -4674.99}
