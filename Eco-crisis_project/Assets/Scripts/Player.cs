@@ -6,8 +6,8 @@ using TMPro;
 
 public class Player : Character
 {
-   
-    
+
+   public TMP_Text timeText;
 
     Image lifeImage;
     Image purityImage;
@@ -31,6 +31,7 @@ public class Player : Character
 
    bool pointing;
    bool shieldActivated;
+    bool win;
 
    int ammo;   
    int maxLifePoints;
@@ -38,12 +39,18 @@ public class Player : Character
    int shieldTime;
    int shieldSeconds;
    int purityPoints;
+   int time;
 
-   float firingTime;
+
+
+    float firingTime;
    float fireRate;
+   
 
     void Start()
     {
+        PlayerPrefs.DeleteKey("time");
+        timeText = GameObject.Find("time").GetComponent<TMP_Text>();
         lifeImage = GameObject.Find("LifeBar").GetComponent<Image>();
         purityImage = GameObject.Find("PurityBar").GetComponent<Image>();
 
@@ -71,12 +78,27 @@ public class Player : Character
         purityPoints = 100;
         maxLifePoints = 100;
         ammo = 30;
-        pointing = false;    
+        pointing = false;
+
+        StartCoroutine(TimeCounter());
     }
 
 
     void Update()
     {
+        if (win)
+        {         
+            StopCoroutine(TimeCounter());
+            PlayerPrefs.SetFloat("time", time);
+            if (!PlayerPrefs.HasKey("record"))
+            {
+              PlayerPrefs.SetInt("record", time);
+            }
+        }
+       
+        
+
+
         float life = (float)lifePoints / maxLifePoints;
         lifeImage.fillAmount = life;
 
@@ -150,6 +172,7 @@ public class Player : Character
       
     }
 
+ 
     public override void Attack()
     {
         RaycastHit hit;
@@ -370,6 +393,22 @@ public class Player : Character
         }
     }
      
+    IEnumerator TimeCounter()
+    {
+        yield return new WaitForSeconds(3);
+
+        while (true)
+        {
+
+         yield return new WaitForSeconds(1);
+         time++;
+         int minutes = Mathf.FloorToInt(time / 60);
+         int seconds = Mathf.FloorToInt(time % 60);
+         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+       
+    }
+
     IEnumerator Recharge()
     {
         playerAnimator.SetBool("firing", false);
