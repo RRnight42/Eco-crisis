@@ -21,6 +21,7 @@ public class Enemy : Character
 
     void Start()
     {
+        lifePoints = 100;
         state = State.rest;
         following = false;
         point = Random.Range(0, 10);
