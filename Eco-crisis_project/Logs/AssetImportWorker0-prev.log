@@ -15,11 +15,11 @@ C:/Users/rober/OneDrive/Escritorio/Eco-crisis_local/Eco-crisis_project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60216
+54276
 Successfully changed project path to: C:/Users/rober/OneDrive/Escritorio/Eco-crisis_local/Eco-crisis_project
 C:/Users/rober/OneDrive/Escritorio/Eco-crisis_local/Eco-crisis_project
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 42.56 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 33.15 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.13f1 (71691879b7f5)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -29,43 +29,43 @@ Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
     Vendor:   
-    VRAM:     3962 MB
-    Driver:   31.0.15.1659
+    VRAM:     3949 MB
+    Driver:   31.0.15.3141
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56588
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56048
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004449 seconds.
+Registered in 0.004618 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 27.99 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 25.85 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.348 seconds
+- Completed reload, in  1.260 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.015239 seconds.
+Registered in 0.007799 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.535 seconds
+- Completed reload, in  1.061 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 8.46 seconds
-Refreshing native plugins compatible for Editor in 0.74 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1411 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 67.7 MB.
+System memory in use before: 67.8 MB.
 System memory in use after: 67.8 MB.
 
 Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 1847.
-Total: 6.217600 ms (FindLiveObjects: 0.475400 ms CreateObjectMapping: 0.182600 ms MarkObjects: 5.422200 ms  DeleteObjects: 0.134000 ms)
+Total: 3.462200 ms (FindLiveObjects: 0.234300 ms CreateObjectMapping: 0.086800 ms MarkObjects: 3.021100 ms  DeleteObjects: 0.118600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -82,7 +82,118 @@ AssetImportParameters requested are different than current active one (requested
 Received Import Request.
   path: Assets/Scenes/Level.unity
   artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3df8747e24574600cae9b22451b3db4c') in 0.019100 seconds 
-  Import took 0.026136 seconds .
+Start importing Assets/Scenes/Level.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59fcdce0820939b951ea792b4d6e08df') in 0.023990 seconds 
+  Import took 0.028549 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 8.132771 seconds.
+  path: Assets/Scenes/Derrota.unity
+  artifactKey: Guid(d75bde823769acc4f840dc77fe34eef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Derrota.unity using Guid(d75bde823769acc4f840dc77fe34eef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4855eb4d2dcef3b2474a11728fc9e366') in 0.004908 seconds 
+  Import took 0.008019 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.770754 seconds.
+  path: Assets/Scenes/Points.unity
+  artifactKey: Guid(1202e82c0a84f054790318b2325f1cfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Points.unity using Guid(1202e82c0a84f054790318b2325f1cfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c5405b14346429f2c97b54926e5232e') in 0.004362 seconds 
+  Import took 0.007624 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.162065 seconds.
+  path: Assets/Scenes/Points_victory.unity
+  artifactKey: Guid(1202e82c0a84f054790318b2325f1cfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Points_victory.unity using Guid(1202e82c0a84f054790318b2325f1cfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c32322827c3fa4ab16272ad34a6c102') in 0.003497 seconds 
+  Import took 0.006245 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 667.581970 seconds.
+  path: Assets/HUD resources/space_bar_icon_danger.png
+  artifactKey: Guid(a12282f098556aa43926de79575216a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HUD resources/space_bar_icon_danger.png using Guid(a12282f098556aa43926de79575216a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0c935c4ef299e5426fc94d16f29183d') in 0.278592 seconds 
+  Import took 0.289957 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.135056 seconds.
+  path: Assets/HUD resources/space_bar_icon_danger.png
+  artifactKey: Guid(a12282f098556aa43926de79575216a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HUD resources/space_bar_icon_danger.png using Guid(a12282f098556aa43926de79575216a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '801b68bf49f27a472e8b9924729ca637') in 0.084252 seconds 
+  Import took 0.087530 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1141.902533 seconds.
+  path: Assets/animations/Space_bar 1.controller
+  artifactKey: Guid(87b5ad960898ec745912cfd290d00a9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/animations/Space_bar 1.controller using Guid(87b5ad960898ec745912cfd290d00a9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4b0d346733beb8e0e903b19ca278711') in 0.029653 seconds 
+  Import took 0.033515 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 88.867357 seconds.
+  path: Assets/animations/losing_load.anim
+  artifactKey: Guid(e5044a7fa78aeec46b2b51f4d4802ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/animations/losing_load.anim using Guid(e5044a7fa78aeec46b2b51f4d4802ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d78ace0527ec63fa98db58ccf682e27') in 0.011063 seconds 
+  Import took 0.014635 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006537 seconds.
+  path: Assets/animations/losing_load.anim
+  artifactKey: Guid(e5044a7fa78aeec46b2b51f4d4802ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/animations/losing_load.anim using Guid(e5044a7fa78aeec46b2b51f4d4802ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d78ace0527ec63fa98db58ccf682e27') in 0.004001 seconds 
+  Import took 0.006858 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.222717 seconds.
+  path: Assets/animations/space_bar_danger.anim
+  artifactKey: Guid(4080f0e70f1ace54dbd95e4e003a11ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/animations/space_bar_danger.anim using Guid(4080f0e70f1ace54dbd95e4e003a11ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f75614b20a3c117095d059ae909f03c1') in 0.005997 seconds 
+  Import took 0.011384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.220547 seconds.
+  path: Assets/animations/loading_space_bar_danger.anim
+  artifactKey: Guid(69e44fe12ed2f4f49952562da817c09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/animations/loading_space_bar_danger.anim using Guid(69e44fe12ed2f4f49952562da817c09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '596de01dea18d3302a7c70049aaac647') in 0.015934 seconds 
+  Import took 0.020789 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009183 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.228 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1393 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 69.5 MB.
+System memory in use after: 69.6 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1856.
+Total: 3.264800 ms (FindLiveObjects: 0.150200 ms CreateObjectMapping: 0.038100 ms MarkObjects: 3.001600 ms  DeleteObjects: 0.074100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -25,7 +25,7 @@ public class sceneManagement : MonoBehaviour
 
     public void CreditsEnd()
     {
-        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(4, LoadSceneMode.Single);
     }
 
     public void StartLevel()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement
 
 public class Player : Character
 {
@@ -32,13 +33,14 @@ public class Player : Character
    bool pointing;
    bool shieldActivated;
     bool win;
+    bool lose;
 
    int ammo;   
    int maxLifePoints;
    int maxPurityPoints;
    int shieldTime;
    int shieldSeconds;
-   int purityPoints;
+  public int purityPoints;
    int time;
 
 
@@ -81,22 +83,22 @@ public class Player : Character
         pointing = false;
 
         StartCoroutine(TimeCounter());
+        StartCoroutine(WinLoad());
+        StartCoroutine(LoseLoad());
     }
 
 
     void Update()
     {
-        if (win)
-        {         
-            StopCoroutine(TimeCounter());
-            PlayerPrefs.SetFloat("time", time);
-            if (!PlayerPrefs.HasKey("record"))
-            {
-              PlayerPrefs.SetInt("record", time);
-            }
+        if(lifePoints <= 0)
+        {
+            lose = true; 
         }
-       
-        
+
+        if (purityPoints <= 0)
+        {
+           win = true;
+        }
 
 
         float life = (float)lifePoints / maxLifePoints;
@@ -392,7 +394,39 @@ public class Player : Character
             }
         }
     }
-     
+
+    IEnumerator WinLoad()
+    {
+        while (!win)
+        {
+            yield return new WaitForSeconds(1);
+        }
+        StopCoroutine(LoseLoad());
+        StopCoroutine(TimeCounter());
+        PlayerPrefs.SetFloat("time", time);
+        if (!PlayerPrefs.HasKey("record"))
+        {
+            PlayerPrefs.SetInt("record", time);
+        }
+        SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
+        yield return null;
+
+       
+    
+    }
+
+    IEnumerator LoseLoad()
+    {
+        while (!lose)
+        {
+            yield return new WaitForSeconds(1);
+        }
+        StopCoroutine(WinLoad());
+        SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive);
+        yield return null;
+    }
+
+
     IEnumerator TimeCounter()
     {
         yield return new WaitForSeconds(3);

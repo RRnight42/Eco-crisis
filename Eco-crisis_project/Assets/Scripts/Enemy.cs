@@ -34,6 +34,11 @@ public class Enemy : Character
 
     void Update()
     {
+        if(lifePoints == 0)
+        {
+            playerScript.purityPoints = playerScript.purityPoints - Random.Range(5,11) ;
+            Destroy(this.gameObject);
+        }
         switch (state)
         {
             case State.patrol:
@@ -107,6 +112,7 @@ public class Enemy : Character
     public override void Attack()
     {
         
+        //intanciar la bola de residuos
 
 
     }
