@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1404489377}
   - component: {fileID: 1404489379}
   m_Layer: 0
-  m_Name: CASA TIPO CHALET
+  m_Name: Chalet
   m_TagString: scene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
