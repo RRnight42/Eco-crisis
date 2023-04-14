@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement
+using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
@@ -17,8 +17,9 @@ public class Player : Character
     public GameObject emptyAmmoToast;
     GameObject ShieldBarImage;
     GameObject pointingTarget;
-    GameObject firingPoint; 
-    
+    GameObject firingPoint;
+
+    FPSController controller;
     
     GameObject shield;
     public GameObject hittingParticle;
@@ -51,10 +52,11 @@ public class Player : Character
 
     void Start()
     {
+        controller = this.GetComponent<FPSController>();
         PlayerPrefs.DeleteKey("time");
         timeText = GameObject.Find("time").GetComponent<TMP_Text>();
-        lifeImage = GameObject.Find("LifeBar").GetComponent<Image>();
-        purityImage = GameObject.Find("PurityBar").GetComponent<Image>();
+        lifeImage = GameObject.Find("LifeBar_S").GetComponent<Image>();
+        purityImage = GameObject.Find("PurityBar_S").GetComponent<Image>();
 
         pointingTarget = GameObject.Find("Target");
         targetAnimator = pointingTarget.GetComponent<Animator>();
@@ -90,7 +92,19 @@ public class Player : Character
 
     void Update()
     {
-        if(lifePoints <= 0)
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            
+            lose = true;
+        }
+
+        if (lifePoints <= 0)
         {
             lose = true; 
         }
@@ -401,14 +415,14 @@ public class Player : Character
         {
             yield return new WaitForSeconds(1);
         }
-        StopCoroutine(LoseLoad());
-        StopCoroutine(TimeCounter());
+        StopAllCoroutines();
+        controller.canMove = false;
         PlayerPrefs.SetFloat("time", time);
         if (!PlayerPrefs.HasKey("record"))
         {
             PlayerPrefs.SetInt("record", time);
         }
-        SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
         yield return null;
 
        
@@ -421,8 +435,9 @@ public class Player : Character
         {
             yield return new WaitForSeconds(1);
         }
-        StopCoroutine(WinLoad());
-        SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive);
+        StopAllCoroutines();
+        controller.canMove = false;
+        SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
         yield return null;
     }
 

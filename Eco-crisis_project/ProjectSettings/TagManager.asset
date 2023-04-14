@@ -7,6 +7,8 @@ TagManager:
   - PatrolPoint
   - scene
   - enemy
+  - LFB
+  - PTB
   layers:
   - Default
   - TransparentFX
