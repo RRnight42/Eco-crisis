@@ -77,7 +77,7 @@ public class Enemy : Character
 
         if (distance.magnitude < DetectionDistance)
         {
-            point = Random.Range(0, 10);
+            point = Random.Range(0, 9);
         }
     }
     void Detection()

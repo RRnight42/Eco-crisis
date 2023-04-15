@@ -13,6 +13,9 @@ public class Player : Character
     Image lifeImage;
     Image purityImage;
 
+    public AudioSource tickTimeAudio;
+    public AudioSource reloadAudio;
+
     public GameObject fullAmmoToast;
     public GameObject emptyAmmoToast;
     GameObject ShieldBarImage;
@@ -20,7 +23,7 @@ public class Player : Character
     GameObject firingPoint;
 
     FPSController controller;
-    
+    Player miPlayer;
     GameObject shield;
     public GameObject hittingParticle;
 
@@ -31,11 +34,11 @@ public class Player : Character
     Animator shieldAnimator;
     Animator playerAnimator;
 
-   bool pointing;
-   bool shieldActivated;
+    bool pointing;
+    bool shieldActivated;
     bool win;
     bool lose;
-
+  
    int ammo;   
    int maxLifePoints;
    int maxPurityPoints;
@@ -52,6 +55,7 @@ public class Player : Character
 
     void Start()
     {
+        miPlayer = this.GetComponent<Player>();
         controller = this.GetComponent<FPSController>();
         PlayerPrefs.DeleteKey("time");
         timeText = GameObject.Find("time").GetComponent<TMP_Text>();
@@ -75,6 +79,7 @@ public class Player : Character
         fullAmmoToast.gameObject.SetActive(false);
         emptyAmmoToast.gameObject.SetActive(false);
 
+      
         shieldActivated = false;
         fireRate = 0.25f;     
         lifePoints = 100;
@@ -87,6 +92,8 @@ public class Player : Character
         StartCoroutine(TimeCounter());
         StartCoroutine(WinLoad());
         StartCoroutine(LoseLoad());
+       
+        
     }
 
 
@@ -157,18 +164,23 @@ public class Player : Character
         { 
           if(ammo == 0)
           {
+               
                 playerAnimator.SetBool("firing", false);
               StartCoroutine(ShowEmptyAmmo());
-          } else { 
-            
+
+          } else {
+
+               
             playerAnimator.SetBool("firing" , true);
             
+
             firingTime += Time.deltaTime;
 
             if (ammo > 0)
             {
                 if (firingTime > fireRate)
                 {
+                   
                     Attack();
                     ammo = ammo - 1;
                     firingTime = 0;
@@ -179,6 +191,7 @@ public class Player : Character
         }
         else
         {
+           
             playerAnimator.SetBool("firing" , false);
             firingTime = 0;
             
@@ -409,6 +422,8 @@ public class Player : Character
         }
     }
 
+   
+
     IEnumerator WinLoad()
     {
         while (!win)
@@ -422,13 +437,15 @@ public class Player : Character
         {
             PlayerPrefs.SetInt("record", time);
         }
-        SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+        miPlayer.enabled = false;
         yield return null;
 
        
     
     }
 
+   
     IEnumerator LoseLoad()
     {
         while (!lose)
@@ -437,15 +454,17 @@ public class Player : Character
         }
         StopAllCoroutines();
         controller.canMove = false;
-        SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+        miPlayer.enabled = false;
         yield return null;
     }
 
 
     IEnumerator TimeCounter()
-    {
+    {   
+        tickTimeAudio.PlayDelayed(4f);
         yield return new WaitForSeconds(3);
-
+        
         while (true)
         {
 
@@ -460,6 +479,7 @@ public class Player : Character
 
     IEnumerator Recharge()
     {
+        reloadAudio.Play();
         playerAnimator.SetBool("firing", false);
         playerAnimator.SetBool("recharge" , true);   
         yield return new WaitForSeconds(3);
@@ -515,7 +535,7 @@ public class Player : Character
             }
             else
             {
-                lifePoints = lifePoints + 10;
+                lifePoints = lifePoints + 25;
                 Destroy(other.gameObject);
                 if(lifePoints >= 100)
                 {
@@ -523,7 +543,7 @@ public class Player : Character
                 }
             }
         }
-        if(other.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "EnemyBullet")
         {
             if (shieldActivated)
             {
@@ -534,6 +554,8 @@ public class Player : Character
                 lifePoints = lifePoints - 10;
             }
         }
+
+
     }
 }
 

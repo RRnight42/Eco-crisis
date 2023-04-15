@@ -9,6 +9,8 @@ TagManager:
   - enemy
   - LFB
   - PTB
+  - Continue
+  - Start
   layers:
   - Default
   - TransparentFX
