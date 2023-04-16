@@ -38,7 +38,8 @@ public class Player : Character
     bool shieldActivated;
     bool win;
     bool lose;
-  
+
+    int lvl;
    int ammo;   
    int maxLifePoints;
    int maxPurityPoints;
@@ -54,7 +55,15 @@ public class Player : Character
    
 
     void Start()
-    {
+    { 
+        
+        lvl = PlayerPrefs.GetInt("Level");
+        if(lvl == 0)
+        {
+           PlayerPrefs.SetInt("Level", 1);
+            lvl = PlayerPrefs.GetInt("Level");
+        }
+        
         miPlayer = this.GetComponent<Player>();
         controller = this.GetComponent<FPSController>();
         PlayerPrefs.DeleteKey("time");
@@ -102,7 +111,7 @@ public class Player : Character
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+            win = true;
         }
 
         if (Input.GetKeyDown(KeyCode.K))

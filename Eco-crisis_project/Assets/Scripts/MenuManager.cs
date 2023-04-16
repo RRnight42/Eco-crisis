@@ -8,29 +8,28 @@ using TMPro;
 public class MenuManager : MonoBehaviour
 {
     int lvl;
-    GameObject btn_continue;
-    public float deleteTime = 0;
+    public Button btn_continue;
+    float deleteTime = 0;
     float completed = 7;
-    public TMP_Text continue_levelint;
-    public Button continueLvl;
+    public TMP_Text continueLevelInt;
+    public TMP_Text deleteText;
     public Image delImage;
     void Start()
     {
+        lvl = PlayerPrefs.GetInt("Level");
+      
 
-        btn_continue = GameObject.FindGameObjectWithTag("Continue");
-        btn_continue.gameObject.SetActive(false);
-
-        if (lvl > 0)
+        if(lvl > 0)
         {
             btn_continue.gameObject.SetActive(true);
         }
 
         StartCoroutine(DeleteData());
 
-        if (PlayerPrefs.HasKey("LevelSaved"))
+        if (PlayerPrefs.HasKey("Level"))
         {
-            continue_levelint.text = "Continue   " + "Level ( " + PlayerPrefs.GetInt("CurrentLevel") + " )";
-            continueLvl.gameObject.SetActive(true);
+            continueLevelInt.text = "Continue level ( " + PlayerPrefs.GetInt("Level") + " )";
+            btn_continue.gameObject.SetActive(true);
         }
     }
 
@@ -39,12 +38,12 @@ public class MenuManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Delete))
         {
-
+            deleteText.color = Color.red;
             deleteTime += Time.deltaTime;
         }
         if (Input.GetKeyUp(KeyCode.Delete))
         {
-
+            deleteText.color = Color.white;
             deleteTime = 0;
 
         }
@@ -52,7 +51,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartLevel()
     {
-        PlayerPrefs.DeleteKey("LevelSaved");
+        PlayerPrefs.DeleteKey("Level");
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
     }
     public void ContinueLevel()
