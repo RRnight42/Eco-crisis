@@ -24,7 +24,6 @@ public class Player : Character
 
     FPSController controller;
     Player miPlayer;
-    Enemy enemyScript;
     GameObject shield;
     public GameObject hittingParticle;
 
@@ -82,7 +81,7 @@ public class Player : Character
 
         firingPoint = GameObject.Find("FiringPoint");
 
-        shield = GameObject.Find("shieldPlayer");
+        shield = GameObject.Find("shield");
         shieldParticle = shield.GetComponent<ParticleSystem>();
 
         
@@ -110,7 +109,16 @@ public class Player : Character
     void Update()
     {
 
-       
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            win = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            
+            lose = true;
+        }
 
         if (lifePoints <= 0)
         {
@@ -207,6 +215,8 @@ public class Player : Character
     {
         RaycastHit hit;
         
+
+
         if (Physics.Raycast(firingPoint.transform.position, firingPoint.transform.right, out hit , 100))
         {
             if (hit.transform.tag == "scene")
@@ -217,7 +227,6 @@ public class Player : Character
                 Destroy(hittingParticleEffect, 4);
 
             }
-
             if (hit.transform.tag == "enemy")
             {
                 Vector3 distance = firingPoint.transform.position - hit.transform.position;
@@ -231,12 +240,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamage = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamage;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damage;
                     }
                 }
@@ -247,12 +256,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamage = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamage;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damage;
                     }
                 }
@@ -263,12 +272,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamage = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamage;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damage;
                     }
                 }
@@ -279,12 +288,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamage = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamage;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damage;
                     }
                 }
@@ -295,12 +304,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamage = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamage;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damage;
                     }
                 }
@@ -311,12 +320,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamage = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamage;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damage;
                     }
                 }
@@ -334,12 +343,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamageHead = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamageHead;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damageHead;
                     }
                 }
@@ -349,12 +358,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamageHead = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamageHead;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damageHead;
                     }
                 }
@@ -364,12 +373,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamageHead = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamageHead;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damageHead;
                     }
                 }
@@ -379,12 +388,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamageHead = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamageHead;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damageHead;
                     }
                 }
@@ -394,12 +403,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamageHead = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamageHead;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damageHead;
                     }
                 }
@@ -409,12 +418,12 @@ public class Player : Character
                     if (criticalProbability == 1)
                     {
                         int criticalDamageHead = damage * 2;
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - criticalDamageHead;
                     }
                     else
                     {
-                        enemyScript = hit.transform.GetComponent<Enemy>();
+                        Enemy enemyScript = hit.transform.GetComponent<Enemy>();
                         enemyScript.lifePoints = enemyScript.lifePoints - damageHead;
                     }
                 }
@@ -426,8 +435,6 @@ public class Player : Character
 
     IEnumerator WinLoad()
     {
-
-       
         while (!win)
         {
             yield return new WaitForSeconds(1);
@@ -450,7 +457,6 @@ public class Player : Character
    
     IEnumerator LoseLoad()
     {
-       
         while (!lose)
         {
             yield return new WaitForSeconds(1);
@@ -517,9 +523,8 @@ public class Player : Character
         }
 
         yield return null;
-        shieldParticle.Stop();
         shieldActivated = false;
-        
+        shieldParticle.Stop();
         shieldAnimator.SetBool("shield", false);
     }
 
@@ -559,17 +564,6 @@ public class Player : Character
             }
         }
 
-        if (other.gameObject.tag == "enemy")
-        {
-            if (shieldActivated)
-            {
-                lifePoints = lifePoints - 5;
-            }
-            else
-            {
-                lifePoints = lifePoints - 30;
-            }
-        }
 
     }
 }

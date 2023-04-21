@@ -8,7 +8,7 @@ public class FPSController : MonoBehaviour
 {
     float walkingSpeed = 7.5f;
     float runningSpeed = 11.5f;
-    float jumpSpeed = 12.0f;
+    float jumpSpeed = 8.0f;
     float gravity = 20.0f;
     public Camera playerCamera;
     float lookSpeed = 2.0f;

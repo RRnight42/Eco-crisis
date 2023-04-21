@@ -24,7 +24,7 @@ public class Enemy : Character
         lifePoints = 100;
         state = State.rest;
         following = false;
-        point = Random.Range(0, 9);
+        point = Random.Range(0, 10);
         AI = this.GetComponent<NavMeshAgent>();
         patrolPoints = GameObject.FindGameObjectsWithTag("PatrolPoint");
         player = GameObject.FindGameObjectWithTag("Player");
@@ -34,9 +34,9 @@ public class Enemy : Character
 
     void Update()
     {
-        if(lifePoints < 0)
+        if(lifePoints == 0)
         {
-            playerScript.purityPoints = playerScript.purityPoints - Random.Range(5,11);
+            playerScript.purityPoints = playerScript.purityPoints - Random.Range(5,11) ;
             Destroy(this.gameObject);
         }
         switch (state)

@@ -11,8 +11,6 @@ TagManager:
   - PTB
   - Continue
   - Start
-  - Healing
-  - Shield
   layers:
   - Default
   - TransparentFX
